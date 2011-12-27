@@ -1,0 +1,70 @@
+cpan[3]> install Acme::Teddy
+Running install for module 'Acme::Teddy'
+Running make for X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+LWP failed with code[500] message[Can't connect to gd.tuwien.ac.at:80 (Bad hostname)]
+
+Trying with
+    /usr/bin/wget -O "/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460"
+to get
+    http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+--2011-12-27 15:42:26--  http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+Resolving gd.tuwien.ac.at... 192.35.244.50
+Connecting to gd.tuwien.ac.at|192.35.244.50|:80... connected.
+HTTP request sent, awaiting response... 502 badgateway
+2011-12-27 15:44:27 ERROR 502: badgateway.
+
+
+    Function system("/usr/bin/wget -O "/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460" "http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz" ")
+    returned status 8 (wstat 2048), left
+/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460 with size 0
+    Warning: no success downloading '/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460'. Giving up on it.
+Fetching with LWP:
+http://cpan.panu.it/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+LWP failed with code[304] message[Not Modified]
+
+Trying with
+    /usr/bin/wget -O "/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460"
+to get
+    http://cpan.panu.it/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+--2011-12-27 15:44:28--  http://cpan.panu.it/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+Resolving cpan.panu.it... 81.208.22.71
+Connecting to cpan.panu.it|81.208.22.71|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5380 (5.3K) [application/x-gzip]
+Saving to: `/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460'
+
+100%[======================================>] 5,380       --.-K/s   in 0.003s  
+
+2011-12-27 15:44:30 (1.77 MB/s) - `/home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz.tmp7460' saved [5380/5380]
+
+Fetching with LWP:
+http://cpan.panu.it/authors/id/X/XI/XIONG/developer-tools/CHECKSUMS
+Checksum for /home/mo/.cpan/sources/authors/id/X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz ok
+
+  CPAN.pm: Going to build X/XI/XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+
+Created MYMETA.yml and MYMETA.json
+Creating new 'Build' script for 'Acme-Teddy' version '1.002003'
+Building Acme-Teddy
+  XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+  ./Build -- OK
+Running Build test
+t/00.load.t ....... 1/1 # Testing Acme::Teddy 1.002003
+t/00.load.t ....... ok   
+t/teddytest-oo.t .. ok   
+t/teddytest.t ..... ok   
+All tests successful.
+Files=3, Tests=4,  0 wallclock secs ( 0.02 usr  0.00 sys +  0.05 cusr  0.00 csys =  0.07 CPU)
+Result: PASS
+  XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+  ./Build test -- OK
+Running Build install
+Building Acme-Teddy
+Installing /rig/lib/perl5/site_perl/5.14.2/Acme/Teddy.pm
+Installing /rig/man/man3/Acme::Teddy.3
+  XIONG/developer-tools/Acme-Teddy-1.002003.tar.gz
+  ./Build install  -- OK
+
+cpan[4]> 
