@@ -1,0 +1,8 @@
+/rig/bin/json_xs
+/rig/lib/perl5/site_perl/5.14.2/i686-linux/JSON/XS.pm
+/rig/lib/perl5/site_perl/5.14.2/i686-linux/JSON/XS/Boolean.pm
+/rig/lib/perl5/site_perl/5.14.2/i686-linux/auto/JSON/XS/XS.bs
+/rig/lib/perl5/site_perl/5.14.2/i686-linux/auto/JSON/XS/XS.so
+/rig/man/man1/json_xs.1
+/rig/man/man3/JSON::XS.3
+/rig/man/man3/JSON::XS::Boolean.3

@@ -1,0 +1,8 @@
+/rig/lib/perl5/site_perl/5.14.2/Test/Reporter.pm
+/rig/lib/perl5/site_perl/5.14.2/Test/Reporter/Transport.pm
+/rig/lib/perl5/site_perl/5.14.2/Test/Reporter/Transport/File.pm
+/rig/lib/perl5/site_perl/5.14.2/Test/Reporter/Transport/Null.pm
+/rig/man/man3/Test::Reporter.3
+/rig/man/man3/Test::Reporter::Transport.3
+/rig/man/man3/Test::Reporter::Transport::File.3
+/rig/man/man3/Test::Reporter::Transport::Null.3
