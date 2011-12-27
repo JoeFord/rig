@@ -1,0 +1,25 @@
+Would you like me to automatically choose some CPAN mirror
+sites for you? (This means connecting to the Internet) [yes] yes
+Trying to fetch a mirror list from the Internet
+Fetching with HTTP::Tiny:
+http://www.perl.org/CPAN/MIRRORED.BY
+
+Looking for CPAN mirrors near you (please be patient)
+............................. done!
+
+New urllist
+  http://gd.tuwien.ac.at/languages/perl/CPAN/
+  http://cpan.panu.it/
+  http://cpan.isep.ipp.pt/
+
+Autoconfiguration complete.
+
+commit: wrote '/home/mo/.cpan/CPAN/MyConfig.pm'
+
+You can re-run configuration any time with 'o conf init' in the CPAN shell
+Terminal does not support AddHistory.
+
+cpan shell -- CPAN exploration and modules installation (v1.960001)
+Enter 'h' for help.
+
+cpan[1]> 
