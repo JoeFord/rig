@@ -1,4 +1,6 @@
 Script started on Tue 27 Dec 2011 05:42:22 PM PST
 ]0;mo@sciencemachine: /rigmo@sciencemachine:/rig$ ls
 [0m[01;34mbin[0m  [01;34mlib[0m  [01;34mman[0m  nohup.out  [01;34mtalk[0m
+]0;mo@sciencemachine: /rigmo@sciencemachine:/rig$ script -fa talk/TabB
+Script started, file is talk/TabB
 ]0;mo@sciencemachine: /rigmo@sciencemachine:/rig$ 
