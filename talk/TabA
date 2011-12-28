@@ -209,4 +209,21 @@ Returning to CPAN configuration.
 
 Please remember to call 'o conf commit' to make the config permanent!
 
-[4mcpan[4]> [24m[1m
+[4mcpan[4]> [24m[1mo conf init test_report
+[0mThe goal of the CPAN Testers project (http://testers.cpan.org/) is to
+test as many CPAN packages as possible on as many platforms as
+possible.  This provides valuable feedback to module authors and
+potential users to identify bugs or platform compatibility issues and
+improves the overall quality and value of CPAN.
+
+One way you can contribute is to send test results for each module
+that you install.  If you install the CPAN::Reporter module, you have
+the option to automatically generate and deliver test reports to CPAN
+Testers whenever you run tests on a CPAN package.
+
+See the CPAN::Reporter documentation for additional details and
+configuration settings.  If your firewall blocks outgoing traffic,
+you may need to configure CPAN::Reporter before sending reports.
+
+ <test_report>
+Generate test reports if CPAN::Reporter is installed (yes/no)? [yes] 
