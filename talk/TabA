@@ -227,3 +227,89 @@ you may need to configure CPAN::Reporter before sending reports.
 
  <test_report>
 Generate test reports if CPAN::Reporter is installed (yes/no)? [yes] 
+
+Would you like me configure CPAN::Reporter now? [yes] 
+
+
+Proceeding to configure CPAN::Reporter.
+
+Some of the following configuration options require one or more "grade:action"
+pairs that determine what grade-specific action to take for that option.
+These pairs should be space-separated and are processed left-to-right. See
+CPAN::Reporter documentation for more details.
+
+    GRADE   :   ACTION  ======> EXAMPLES
+    -------     -------         --------
+    pass        yes             default:no
+    fail        no              default:yes pass:no
+    unknown     ask/no          default:ask/no pass:yes fail:no
+    na          ask/yes
+    default
+
+
+CPAN::Reporter: no config file found; creating a new one.
+
+CPAN::Reporter requires a valid email address to identify senders
+in the body of a test report.  Please use a standard email format
+like: "John Doe" <jdoe@example.com>
+
+email_from? [] 
+
+Before test reports are sent, you may want to review or edit the test
+report and add additional comments about the result or about your system
+or Perl configuration.  By default, CPAN::Reporter will ask after
+each report is generated whether or not you would like to edit the
+report. This option takes "grade:action" pairs.
+
+(Recommended: 'default:ask/no pass/na:no')
+
+edit_report? [default:ask/no pass/na:no] 
+
+By default, CPAN::Reporter will prompt you for confirmation that
+the test report should be sent before actually doing it. This
+gives the opportunity to skip sending particular reports if
+you need to (e.g. if you caused the failure). This option takes
+"grade:action" pairs.
+
+(Recommended: 'default:ask/yes pass/na:yes')
+
+send_report? [default:ask/yes pass/na:yes] 
+
+CPAN::Reporter sends your reports over HTTPS using Metabase. This option lets
+you set a different uri, transport mechanism and metabase profile path. If you
+are receiving HTTPS errors, you may change the uri to use plain HTTP, though
+this is not recommended. Unless you know what you're doing, just accept
+the default value.
+
+(Recommended: 'Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json')
+
+transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] 
+
+Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] 
+transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] 
+
+Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] 
+transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] 
+
+Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] 
+transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] sadf
+
+CPAN::Reporter: error loading Test::Reporter::Transport::sadf. Please install the missing module or choose a different transport mechanism.
+
+
+CPAN::Reporter: writing config file to '/home/mo/.cpanreporter/config.ini'.
+
+Returning to CPAN configuration.
+
+Please remember to call 'o conf commit' to make the config permanent!
+
+[4mcpan[5]> [24m[1masdf
+[0mUnknown shell command 'asdf'. Type ? for help.
+
+[4mcpan[6]> [24m[1mq
+[0mTerminal does not support GetHistory.
+Lockfile removed.
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ exit
+exit
+
+Script done on Tue 27 Dec 2011 07:54:56 PM PST
