@@ -103,4 +103,4 @@ Please remember to call 'o conf commit' to make the config permanent!
 [4mcpan[2]> [24m[1mo conf commit
 [0mcommit: wrote '/home/mo/.cpan/CPAN/MyConfig.pm'
 
-[4mcpan[3]> [24m[1m
+[4mcpan[3]> [24m[1m^[[A^[[A        
