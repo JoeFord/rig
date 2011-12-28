@@ -1479,4 +1479,693 @@ Features present: preput 1 getHistory 1 addHistory 1 attribs 1 ornaments 1 appna
 	would exit the test. ;-)  (If feature 'preput' is present,
 	this word should be already entered.)
 
-                                                                                  [4mEnter arithmetic or Perl expression:[24m [1mexit[0m
+                                                                                  [4mEnter arithmetic or Perl expression:[24m [1mexit[0m
+  ILYAZ/modules/Term-ReadLine-Perl-1.0303.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/share/perl/5.12.4/Term/ReadLine'
+mkdir /usr/local/share/perl: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  ILYAZ/modules/Term-ReadLine-Perl-1.0303.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running install for module 'YAML'
+Running make for I/IN/INGY/YAML-0.77.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/I/IN/INGY/YAML-0.77.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/I/IN/INGY/CHECKSUMS
+Checksum for /home/mo/.cpan/sources/authors/id/I/IN/INGY/YAML-0.77.tar.gz ok
+
+  CPAN.pm: Going to build I/IN/INGY/YAML-0.77.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Writing Makefile for YAML
+Writing MYMETA.yml and MYMETA.json
+cp lib/Test/YAML.pm blib/lib/Test/YAML.pm
+cp lib/YAML/Types.pm blib/lib/YAML/Types.pm
+cp lib/YAML/Node.pm blib/lib/YAML/Node.pm
+cp lib/YAML/Loader.pm blib/lib/YAML/Loader.pm
+cp lib/YAML/Any.pm blib/lib/YAML/Any.pm
+cp lib/YAML/Error.pm blib/lib/YAML/Error.pm
+cp lib/YAML/Loader/Base.pm blib/lib/YAML/Loader/Base.pm
+cp lib/YAML.pm blib/lib/YAML.pm
+cp lib/YAML/Mo.pm blib/lib/YAML/Mo.pm
+cp lib/YAML/Dumper/Base.pm blib/lib/YAML/Dumper/Base.pm
+cp lib/YAML/Marshall.pm blib/lib/YAML/Marshall.pm
+cp lib/YAML/Mo.pod blib/lib/YAML/Mo.pod
+cp lib/YAML/Tag.pm blib/lib/YAML/Tag.pm
+cp lib/YAML/Dumper.pm blib/lib/YAML/Dumper.pm
+Manifying blib/man3/Test::YAML.3pm
+Manifying blib/man3/YAML::Types.3pm
+Manifying blib/man3/YAML::Loader.3pm
+Manifying blib/man3/YAML::Node.3pm
+Manifying blib/man3/YAML::Any.3pm
+Manifying blib/man3/YAML::Error.3pm
+Manifying blib/man3/YAML::Loader::Base.3pm
+Manifying blib/man3/YAML.3pm
+Manifying blib/man3/YAML::Dumper::Base.3pm
+Manifying blib/man3/YAML::Tag.3pm
+Manifying blib/man3/YAML::Mo.3pm
+Manifying blib/man3/YAML::Marshall.3pm
+Manifying blib/man3/YAML::Dumper.3pm
+  INGY/YAML-0.77.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'inc', 'blib/lib', 'blib/arch')" t/*.t
+t/2-scalars.t ............ t/2-scalars.t ............ 1/9                                 t/2-scalars.t ............ ok
+t/basic-tests.t .......... t/basic-tests.t .......... 1/4                                 t/basic-tests.t .......... ok
+t/bugs-emailed.t ......... t/bugs-emailed.t ......... 1/25                                   t/bugs-emailed.t ......... ok
+t/bugs-rt.t .............. t/bugs-rt.t .............. 1/41                                   t/bugs-rt.t .............. ok
+t/changes.t .............. t/changes.t .............. 1/1                                 t/changes.t .............. ok
+t/dump-basics.t .......... t/dump-basics.t .......... 1/6                                 t/dump-basics.t .......... ok
+t/dump-blessed.t ......... t/dump-blessed.t ......... 1/2                                 t/dump-blessed.t ......... ok
+t/dump-code.t ............ t/dump-code.t ............ 1/7                                 t/dump-code.t ............ ok
+t/dump-file-utf8.t ....... t/dump-file-utf8.t ....... 1/6                                 t/dump-file-utf8.t ....... ok
+t/dump-file.t ............ t/dump-file.t ............ 1/3                                 t/dump-file.t ............ ok
+t/dump-nested.t .......... t/dump-nested.t .......... 1/20                                   t/dump-nested.t .......... ok
+t/dump-opts.t ............ t/dump-opts.t ............ 1/19                                   t/dump-opts.t ............ ok
+t/dump-perl-types-512.t .. t/dump-perl-types-512.t .. 1/2                                 t/dump-perl-types-512.t .. ok
+t/dump-perl-types-514.t ..                                 t/dump-perl-types-514.t .. skipped: test only for perls v5.13.5-11-gfb85c04 or later
+t/dump-perl-types.t ...... t/dump-perl-types.t ...... 1/14                                   t/dump-perl-types.t ...... ok
+t/dump-stringify.t ....... t/dump-stringify.t ....... 1/6 t/dump-stringify.t ....... 2/6                                 t/dump-stringify.t ....... ok
+t/dump-tests-512.t ....... t/dump-tests-512.t ....... 1/1                                 t/dump-tests-512.t ....... ok
+t/dump-tests-514.t .......                                 t/dump-tests-514.t ....... skipped: test only for perls v5.13.5-11-gfb85c04 or later
+t/dump-tests.t ........... t/dump-tests.t ........... 1/57                                   t/dump-tests.t ........... ok
+t/dump-works.t ........... t/dump-works.t ........... 1/?                                 t/dump-works.t ........... ok
+t/errors.t ............... t/errors.t ............... 1/35                                   t/errors.t ............... ok
+t/export.t ............... t/export.t ............... 1/3                                 t/export.t ............... ok
+t/freeze-thaw.t .......... t/freeze-thaw.t .......... 1/9                                 t/freeze-thaw.t .......... ok
+t/global-api.t ........... t/global-api.t ........... 1/4                                 t/global-api.t ........... ok
+t/inbox.t ................ t/inbox.t ................ 1/3                                 t/inbox.t ................ ok
+t/load-fails.t ........... t/load-fails.t ........... 1/4                                 t/load-fails.t ........... ok
+t/load-passes.t .......... t/load-passes.t .......... 1/8                                 t/load-passes.t .......... ok
+t/load-slides.t .......... t/load-slides.t .......... 1/28                                   t/load-slides.t .......... ok
+t/load-spec.t ............ t/load-spec.t ............ 1/52                                   t/load-spec.t ............ ok
+t/load-tests.t ........... t/load-tests.t ........... 1/28                                   t/load-tests.t ........... ok
+t/load-works.t ........... t/load-works.t ........... 1/?                                 t/load-works.t ........... ok
+t/marshall.t ............. t/marshall.t ............. 1/10                                   t/marshall.t ............. ok
+t/node-info.t ............ t/node-info.t ............ 1/16                                   t/node-info.t ............ ok
+t/pugs-objects.t ......... t/pugs-objects.t ......... 1/2                                 t/pugs-objects.t ......... ok
+t/references.t ........... t/references.t ........... 1/10                                   t/references.t ........... ok
+t/regexp.t ............... t/regexp.t ............... 1/11                                   t/regexp.t ............... ok
+t/svk.t .................. t/svk.t .................. 1/3                                 t/svk.t .................. ok
+t/test.t ................. t/test.t ................. 1/1                                 t/test.t ................. ok
+All tests successful.
+Files=38, Tests=452,  5 wallclock secs ( 0.15 usr  0.07 sys +  3.85 cusr  0.55 csys =  4.62 CPU)
+Result: PASS
+  INGY/YAML-0.77.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+Manifying blib/man3/Test::YAML.3pm
+Manifying blib/man3/YAML::Types.3pm
+Manifying blib/man3/YAML::Loader.3pm
+Manifying blib/man3/YAML::Node.3pm
+Manifying blib/man3/YAML::Any.3pm
+Manifying blib/man3/YAML::Error.3pm
+Manifying blib/man3/YAML::Loader::Base.3pm
+Manifying blib/man3/YAML.3pm
+Manifying blib/man3/YAML::Dumper::Base.3pm
+Manifying blib/man3/YAML::Tag.3pm
+Manifying blib/man3/YAML::Mo.3pm
+Manifying blib/man3/YAML::Marshall.3pm
+Manifying blib/man3/YAML::Dumper.3pm
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  INGY/YAML-0.77.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running install for module 'Parse::CPAN::Meta'
+Running make for D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz ok
+
+  CPAN.pm: Going to build D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Writing Makefile for Parse::CPAN::Meta
+Writing MYMETA.yml and MYMETA.json
+cp lib/Parse/CPAN/Meta.pm blib/lib/Parse/CPAN/Meta.pm
+Manifying blib/man3/Parse::CPAN::Meta.3pm
+  DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/01_compile.t .... t/01_compile.t .... 1/3                          t/01_compile.t .... ok
+t/02_api.t ........ t/02_api.t ........ 1/?                           t/02_api.t ........ ok
+t/03_functions.t .. t/03_functions.t .. 1/2                          t/03_functions.t .. ok
+t/04_export.t ..... t/04_export.t ..... 1/4                          t/04_export.t ..... ok
+t/05_errors.t ..... t/05_errors.t ..... 1/1                          t/05_errors.t ..... ok
+All tests successful.
+Files=5, Tests=42,  1 wallclock secs ( 0.04 usr  0.00 sys +  0.22 cusr  0.03 csys =  0.29 CPU)
+Result: PASS
+  DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+Manifying blib/man3/Parse::CPAN::Meta.3pm
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running install for module 'Text::Glob'
+Running make for R/RC/RCLAMP/Text-Glob-0.09.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/R/RC/RCLAMP/Text-Glob-0.09.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/R/RC/RCLAMP/CHECKSUMS
+Checksum for /home/mo/.cpan/sources/authors/id/R/RC/RCLAMP/Text-Glob-0.09.tar.gz ok
+
+  CPAN.pm: Going to build R/RC/RCLAMP/Text-Glob-0.09.tar.gz
+
+Creating new 'MYMETA.yml' with configuration results
+Creating new 'Build' script for 'Text-Glob' version '0.09'
+Building Text-Glob
+  RCLAMP/Text-Glob-0.09.tar.gz
+  ./Build -- OK
+Running Build test
+t/Text-Glob.t .. t/Text-Glob.t .. 1/44                         t/Text-Glob.t .. ok
+All tests successful.
+Files=1, Tests=44,  0 wallclock secs ( 0.02 usr  0.01 sys +  0.03 cusr  0.00 csys =  0.06 CPU)
+Result: PASS
+  RCLAMP/Text-Glob-0.09.tar.gz
+  ./Build test -- OK
+Running Build install
+Building Text-Glob
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at /usr/share/perl/5.12/Module/Build/Base.pm line 3326
+  RCLAMP/Text-Glob-0.09.tar.gz
+  ./Build install  -- NOT OK
+Running install for module 'CPAN'
+Running make for A/AN/ANDK/CPAN-1.9800.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/A/AN/ANDK/CPAN-1.9800.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/A/AN/ANDK/CPAN-1.9800.tar.gz ok
+
+  CPAN.pm: Going to build A/AN/ANDK/CPAN-1.9800.tar.gz
+
+Importing PAUSE public key into your GnuPG keychain... gpg: new configuration file `/home/mo/.gnupg/gpg.conf' created
+gpg: WARNING: options in `/home/mo/.gnupg/gpg.conf' are not yet active during this run
+done!
+(You may wish to trust it locally with 'gpg --lsign-key 450F89EC')
+Checking if your kit is complete...
+Looks good
+Writing Makefile for CPAN
+Writing MYMETA.yml and MYMETA.json
+cp lib/CPAN.pm blib/lib/CPAN.pm
+cp lib/CPAN/CacheMgr.pm blib/lib/CPAN/CacheMgr.pm
+cp lib/CPAN/FTP/netrc.pm blib/lib/CPAN/FTP/netrc.pm
+cp lib/CPAN/LWP/UserAgent.pm blib/lib/CPAN/LWP/UserAgent.pm
+cp lib/CPAN/FTP.pm blib/lib/CPAN/FTP.pm
+cp lib/CPAN/Queue.pm blib/lib/CPAN/Queue.pm
+cp lib/CPAN/Distroprefs.pm blib/lib/CPAN/Distroprefs.pm
+cp lib/CPAN/Kwalify/distroprefs.yml blib/lib/CPAN/Kwalify/distroprefs.yml
+cp lib/App/Cpan.pm blib/lib/App/Cpan.pm
+cp lib/CPAN/Kwalify.pm blib/lib/CPAN/Kwalify.pm
+cp lib/CPAN/Module.pm blib/lib/CPAN/Module.pm
+cp lib/CPAN/Author.pm blib/lib/CPAN/Author.pm
+cp lib/CPAN/Debug.pm blib/lib/CPAN/Debug.pm
+cp lib/CPAN/HTTP/Credentials.pm blib/lib/CPAN/HTTP/Credentials.pm
+cp lib/CPAN/API/HOWTO.pod blib/lib/CPAN/API/HOWTO.pod
+cp lib/CPAN/HTTP/Client.pm blib/lib/CPAN/HTTP/Client.pm
+cp lib/CPAN/Complete.pm blib/lib/CPAN/Complete.pm
+cp lib/CPAN/FirstTime.pm blib/lib/CPAN/FirstTime.pm
+cp lib/CPAN/Distrostatus.pm blib/lib/CPAN/Distrostatus.pm
+cp lib/CPAN/Exception/blocked_urllist.pm blib/lib/CPAN/Exception/blocked_urllist.pm
+cp lib/CPAN/Tarzip.pm blib/lib/CPAN/Tarzip.pm
+cp lib/CPAN/Admin.pm blib/lib/CPAN/Admin.pm
+cp lib/CPAN/Prompt.pm blib/lib/CPAN/Prompt.pm
+cp lib/CPAN/URL.pm blib/lib/CPAN/URL.pm
+cp lib/CPAN/Version.pm blib/lib/CPAN/Version.pm
+cp lib/CPAN/DeferredCode.pm blib/lib/CPAN/DeferredCode.pm
+cp lib/CPAN/Distribution.pm blib/lib/CPAN/Distribution.pm
+cp lib/CPAN/Nox.pm blib/lib/CPAN/Nox.pm
+cp lib/CPAN/Bundle.pm blib/lib/CPAN/Bundle.pm
+cp lib/CPAN/Exception/RecursiveDependency.pm blib/lib/CPAN/Exception/RecursiveDependency.pm
+cp lib/CPAN/Shell.pm blib/lib/CPAN/Shell.pm
+cp lib/CPAN/InfoObj.pm blib/lib/CPAN/InfoObj.pm
+cp lib/CPAN/HandleConfig.pm blib/lib/CPAN/HandleConfig.pm
+cp lib/CPAN/Exception/yaml_process_error.pm blib/lib/CPAN/Exception/yaml_process_error.pm
+cp lib/CPAN/Exception/yaml_not_installed.pm blib/lib/CPAN/Exception/yaml_not_installed.pm
+cp lib/CPAN/Index.pm blib/lib/CPAN/Index.pm
+cp lib/CPAN/Kwalify/distroprefs.dd blib/lib/CPAN/Kwalify/distroprefs.dd
+cp lib/CPAN/Mirrors.pm blib/lib/CPAN/Mirrors.pm
+cp scripts/cpan blib/script/cpan
+/usr/bin/perl -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/cpan
+Manifying blib/man1/cpan.1p
+Manifying blib/man3/CPAN.3pm
+Manifying blib/man3/CPAN::Tarzip.3pm
+Manifying blib/man3/CPAN::Admin.3pm
+Manifying blib/man3/CPAN::Debug.3pm
+Manifying blib/man3/CPAN::HandleConfig.3pm
+Manifying blib/man3/CPAN::Queue.3pm
+Manifying blib/man3/CPAN::Distroprefs.3pm
+Manifying blib/man3/CPAN::Version.3pm
+Manifying blib/man3/App::Cpan.3pm
+Manifying blib/man3/CPAN::Kwalify.3pm
+Manifying blib/man3/CPAN::API::HOWTO.3pm
+Manifying blib/man3/CPAN::Nox.3pm
+Manifying blib/man3/CPAN::Mirrors.3pm
+Manifying blib/man3/CPAN::FirstTime.3pm
+  ANDK/CPAN-1.9800.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/00signature.t ........                               t/00signature.t ........ skipped: No Module::Signature found [INC = /home/mo/.cpan/build/CPAN-1.9800-34Lz8i/blib/lib /home/mo/.cpan/build/CPAN-1.9800-34Lz8i/blib/arch /home/mo/.cpan/build/Text-Glob-0.09-Cst2KT/blib/arch /home/mo/.cpan/build/Text-Glob-0.09-Cst2KT/blib/lib /home/mo/.cpan/build/Parse-CPAN-Meta-1.4401-18BUd6/blib/arch /home/mo/.cpan/build/Parse-CPAN-Meta-1.4401-18BUd6/blib/lib /home/mo/.cpan/build/YAML-0.77-VheM7s/blib/arch /home/mo/.cpan/build/YAML-0.77-VheM7s/blib/lib /home/mo/.cpan/build/Term-ReadLine-Perl-1.0303-XuJ4wb/blib/arch /home/mo/.cpan/build/Term-ReadLine-Perl-1.0303-XuJ4wb/blib/lib /home/mo/.cpan/build/Archive-Zip-1.30-ZC_s5X/blib/arch /home/mo/.cpan/build/Archive-Zip-1.30-ZC_s5X/blib/lib /home/mo/.cpan/build/Archive-Tar-1.82-hdDheV/blib/arch /home/mo/.cpan/build/Archive-Tar-1.82-hdDheV/blib/lib /home/mo/.cpan/build/IO-Compress-2.046-oZp8wZ/blib/arch /home/mo/.cpan/build/IO-Compress-2.046-oZp8wZ/blib/lib /home/mo/.cpan/build/Compress-Raw-Zlib-2.045-WnuDIu/blib/arch /home/mo/.cpan/build/Compress-Raw-Zlib-2.045-WnuDIu/blib/lib /home/mo/.cpan/build/Compress-Raw-Bzip2-2.045-8gnZkJ/blib/arch /home/mo/.cpan/build/Compress-Raw-Bzip2-2.045-8gnZkJ/blib/lib /home/mo/.cpan/build/Digest-SHA-5.70-xHLrtU/blib/arch /home/mo/.cpan/build/Digest-SHA-5.70-xHLrtU/blib/lib /home/mo/.cpan/build/Data-Dumper-2.131-YVUhMs/blib/arch /home/mo/.cpan/build/Data-Dumper-2.131-YVUhMs/blib/lib /home/mo/.cpan/build/Test-Simple-0.98-BXgLjX/blib/arch /home/mo/.cpan/build/Test-Simple-0.98-BXgLjX/blib/lib /home/mo/.cpan/build/Scalar-List-Utils-1.23-7A0dgo/blib/arch /home/mo/.cpan/build/Scalar-List-Utils-1.23-7A0dgo/blib/lib /home/mo/.cpan/build/PathTools-3.33-PsP6Dz/blib/arch /home/mo/.cpan/build/PathTools-3.33-PsP6Dz/blib/lib /home/mo/.cpan/build/ExtUtils-MakeMaker-6.62-Xm5RLa/blib/arch /home/mo/.cpan/build/ExtUtils-MakeMaker-6.62-Xm5RLa/blib/lib /home/mo/.cpan/build/ExtUtils-CBuilder-0.280202-dsAf2O/blib/arch /home/mo/.cpan/build/ExtUtils-CBuilder-0.280202-dsAf2O/blib/lib /home/mo/.cpan/build/Test-Harness-3.23-DfrF9r/blib/arch /home/mo/.cpan/build/Test-Harness-3.23-DfrF9r/blib/lib /home/mo/.cpan/build/Text-Glob-0.09-Cst2KT/blib/arch /home/mo/.cpan/build/Text-Glob-0.09-Cst2KT/blib/lib /home/mo/.cpan/build/Parse-CPAN-Meta-1.4401-18BUd6/blib/arch /home/mo/.cpan/build/Parse-CPAN-Meta-1.4401-18BUd6/blib/lib /home/mo/.cpan/build/YAML-0.77-VheM7s/blib/arch /home/mo/.cpan/build/YAML-0.77-VheM7s/blib/lib /home/mo/.cpan/build/Term-ReadLine-Perl-1.0303-XuJ4wb/blib/arch /home/mo/.cpan/build/Term-ReadLine-Perl-1.0303-XuJ4wb/blib/lib /home/mo/.cpan/build/Archive-Zip-1.30-ZC_s5X/blib/arch /home/mo/.cpan/build/Archive-Zip-1.30-ZC_s5X/blib/lib /home/mo/.cpan/build/Archive-Tar-1.82-hdDheV/blib/arch /home/mo/.cpan/build/Archive-Tar-1.82-hdDheV/blib/lib /home/mo/.cpan/build/IO-Compress-2.046-oZp8wZ/blib/arch /home/mo/.cpan/build/IO-Compress-2.046-oZp8wZ/blib/lib /home/mo/.cpan/build/Compress-Raw-Zlib-2.045-WnuDIu/blib/arch /home/mo/.cpan/build/Compress-Raw-Zlib-2.045-WnuDIu/blib/lib /home/mo/.cpan/build/Compress-Raw-Bzip2-2.045-8gnZkJ/blib/arch /home/mo/.cpan/build/Compress-Raw-Bzip2-2.045-8gnZkJ/blib/lib /home/mo/.cpan/build/Digest-SHA-5.70-xHLrtU/blib/arch /home/mo/.cpan/build/Digest-SHA-5.70-xHLrtU/blib/lib /home/mo/.cpan/build/Data-Dumper-2.131-YVUhMs/blib/arch /home/mo/.cpan/build/Data-Dumper-2.131-YVUhMs/blib/lib /home/mo/.cpan/build/Test-Simple-0.98-BXgLjX/blib/arch /home/mo/.cpan/build/Test-Simple-0.98-BXgLjX/blib/lib /home/mo/.cpan/build/Scalar-List-Utils-1.23-7A0dgo/blib/arch /home/mo/.cpan/build/Scalar-List-Utils-1.23-7A0dgo/blib/lib /home/mo/.cpan/build/PathTools-3.33-PsP6Dz/blib/arch /home/mo/.cpan/build/PathTools-3.33-PsP6Dz/blib/lib /home/mo/.cpan/build/ExtUtils-MakeMaker-6.62-Xm5RLa/blib/arch /home/mo/.cpan/build/ExtUtils-MakeMaker-6.62-Xm5RLa/blib/lib /home/mo/.cpan/build/ExtUtils-CBuilder-0.280202-dsAf2O/blib/arch /home/mo/.cpan/build/ExtUtils-CBuilder-0.280202-dsAf2O/blib/lib /home/mo/.cpan/build/Test-Harness-3.23-DfrF9r/blib/arch /home/mo/.cpan/build/Test-Harness-3.23-DfrF9r/blib/lib /etc/perl /usr/local/lib/perl/5.12.4 /usr/local/share/perl/5.12.4 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.12 /usr/share/perl/5.12 /usr/local/lib/site_perl .]
+t/01loadme.t ........... t/01loadme.t ........... 1/1                               t/01loadme.t ........... ok
+t/02nox.t .............. t/02nox.t .............. 1/8                               t/02nox.t .............. ok
+t/03pkgs.t ............. t/03pkgs.t ............. 1/26                                 t/03pkgs.t ............. ok
+t/04clean_load.t ....... t/04clean_load.t ....... 1/34 t/04clean_load.t ....... 16/34                                 t/04clean_load.t ....... ok
+t/10version.t .......... t/10version.t .......... 1/60                                 t/10version.t .......... ok
+t/11mirroredby.t ....... t/11mirroredby.t ....... 1/6                               t/11mirroredby.t ....... ok
+t/12cpan.t ............. t/12cpan.t ............. 1/28                                 t/12cpan.t ............. ok
+t/13tarzip.t ........... t/13tarzip.t ........... 1/4                               t/13tarzip.t ........... ok
+t/14forkbomb.t .........                               t/14forkbomb.t ......... skipped: test only run when called with --doit
+t/30shell.t ............                               t/30shell.t ............ skipped: no Expect, maybe try env CPAN_RUN_SHELL_TEST_WITHOUT_EXPECT=1
+t/31sessions.t ......... t/31sessions.t ......... 1/75 t/31sessions.t ......... 4/75 t/31sessions.t ......... 8/75 t/31sessions.t ......... 12/75 t/31sessions.t ......... 30/75 t/31sessions.t ......... 42/75 t/31sessions.t ......... 47/75 t/31sessions.t ......... 50/75 t/31sessions.t ......... 53/75 t/31sessions.t ......... 63/75 t/31sessions.t ......... 68/75 t/31sessions.t ......... 72/75                                 t/31sessions.t ......... ok
+t/41distribution.t ..... t/41distribution.t ..... 1/19                                 t/41distribution.t ..... ok
+t/42distroprefs.t ...... t/42distroprefs.t ...... 1/5 t/42distroprefs.t ...... 3/5                               t/42distroprefs.t ...... ok
+t/43distroprefspref.t .. t/43distroprefspref.t .. 1/21                                 t/43distroprefspref.t .. ok
+t/44cpanmeta.t ......... t/44cpanmeta.t ......... 1/55                                 t/44cpanmeta.t ......... ok
+t/50pod.t ..............                               t/50pod.t .............. skipped: Test::Pod 1.00 required for testing POD
+t/51pod.t .............. t/51pod.t .............. 1/82                                 t/51pod.t .............. ok
+t/52podcover.t .........                               t/52podcover.t ......... skipped: Test::Pod::Coverage 0.18 required for testing pod coverage
+t/60credentials.t ...... t/60credentials.t ...... 1/5                               t/60credentials.t ...... ok
+t/70_critic.t ..........                               t/70_critic.t .......... skipped: Test::Perl::Critic required to criticise code
+All tests successful.
+Files=21, Tests=429, 38 wallclock secs ( 0.11 usr  0.05 sys + 25.83 cusr  2.97 csys = 28.96 CPU)
+Result: PASS
+  ANDK/CPAN-1.9800.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/bin'
+Do not have write permissions on '/usr/bin'
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_perl_install] Error 13
+  ANDK/CPAN-1.9800.tar.gz
+  /usr/bin/make install  -- NOT OK
+----
+  You may have to su to root to install the package
+  (Or you may want to run something like
+    o conf make_install_make_command 'sudo make'
+  to raise your permissions.Running install for module 'File::Which'
+Running make for A/AD/ADAMK/File-Which-1.09.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/A/AD/ADAMK/File-Which-1.09.tar.gz ok
+
+  CPAN.pm: Going to build A/AD/ADAMK/File-Which-1.09.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Warning: prerequisite Test::Script 1.05 not found.
+Writing Makefile for File::Which
+Writing MYMETA.yml and MYMETA.json
+---- Unsatisfied dependencies detected during ----
+----       ADAMK/File-Which-1.09.tar.gz       ----
+    Test::Script [requires]
+Running make test
+  Delayed until after prerequisites
+Running make install
+  Delayed until after prerequisites
+Running install for module 'Test::Script'
+Running make for A/AD/ADAMK/Test-Script-1.07.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/A/AD/ADAMK/Test-Script-1.07.tar.gz ok
+
+  CPAN.pm: Going to build A/AD/ADAMK/Test-Script-1.07.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Warning: prerequisite IPC::Run3 0.034 not found.
+Warning: prerequisite Probe::Perl 0.01 not found.
+Writing Makefile for Test::Script
+Writing MYMETA.yml and MYMETA.json
+---- Unsatisfied dependencies detected during ----
+----       ADAMK/Test-Script-1.07.tar.gz      ----
+    Probe::Perl [requires]
+    IPC::Run3 [requires]
+Running make test
+  Delayed until after prerequisites
+Running make install
+  Delayed until after prerequisites
+Running install for module 'Probe::Perl'
+Running make for K/KW/KWILLIAMS/Probe-Perl-0.01.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/K/KW/KWILLIAMS/Probe-Perl-0.01.tar.gz ok
+
+  CPAN.pm: Going to build K/KW/KWILLIAMS/Probe-Perl-0.01.tar.gz
+
+Creating new 'MYMETA.yml' with configuration results
+Creating new 'Build' script for 'Probe-Perl' version '0.01'
+Building Probe-Perl
+  KWILLIAMS/Probe-Perl-0.01.tar.gz
+  ./Build -- OK
+Running Build test
+t/basic.t .. t/basic.t .. 1/19                     t/basic.t .. ok
+All tests successful.
+Files=1, Tests=19,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.01 cusr  0.02 csys =  0.07 CPU)
+Result: PASS
+  KWILLIAMS/Probe-Perl-0.01.tar.gz
+  ./Build test -- OK
+Running Build install
+Building Probe-Perl
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at /usr/share/perl/5.12/Module/Build/Base.pm line 3326
+  KWILLIAMS/Probe-Perl-0.01.tar.gz
+  ./Build install  -- NOT OK
+Running install for module 'IPC::Run3'
+Running make for R/RJ/RJBS/IPC-Run3-0.045.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/R/RJ/RJBS/IPC-Run3-0.045.tar.gz ok
+
+  CPAN.pm: Going to build R/RJ/RJBS/IPC-Run3-0.045.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Writing Makefile for IPC::Run3
+Writing MYMETA.yml and MYMETA.json
+cp lib/IPC/Run3/ProfArrayBuffer.pm blib/lib/IPC/Run3/ProfArrayBuffer.pm
+cp lib/IPC/Run3/ProfPP.pm blib/lib/IPC/Run3/ProfPP.pm
+cp lib/IPC/Run3.pm blib/lib/IPC/Run3.pm
+cp lib/IPC/Run3/ProfLogger.pm blib/lib/IPC/Run3/ProfLogger.pm
+cp lib/IPC/Run3/ProfLogReader.pm blib/lib/IPC/Run3/ProfLogReader.pm
+cp lib/IPC/Run3/ProfReporter.pm blib/lib/IPC/Run3/ProfReporter.pm
+Manifying blib/man3/IPC::Run3::ProfArrayBuffer.3pm
+Manifying blib/man3/IPC::Run3::ProfPP.3pm
+Manifying blib/man3/IPC::Run3::ProfLogReader.3pm
+Manifying blib/man3/IPC::Run3::ProfLogger.3pm
+Manifying blib/man3/IPC::Run3.3pm
+Manifying blib/man3/IPC::Run3::ProfReporter.3pm
+  RJBS/IPC-Run3-0.045.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/die_handler.t ............... t/die_handler.t ............... 1/1                                      t/die_handler.t ............... ok
+t/fd_leak.t ................... t/fd_leak.t ................... 1/11                                        t/fd_leak.t ................... ok
+t/fork.t ...................... t/fork.t ...................... 1/5                                      t/fork.t ...................... ok
+t/IPC-Run3-ProfArrayBuffer.t .. t/IPC-Run3-ProfArrayBuffer.t .. 1/2                                      t/IPC-Run3-ProfArrayBuffer.t .. ok
+t/IPC-Run3-profiling.t ........ t/IPC-Run3-profiling.t ........ 1/1                                      t/IPC-Run3-profiling.t ........ ok
+t/IPC-Run3-ProfLogger.t ....... t/IPC-Run3-ProfLogger.t ....... 1/1                                      t/IPC-Run3-ProfLogger.t ....... ok
+t/IPC-Run3-ProfLogReader.t .... t/IPC-Run3-ProfLogReader.t .... 1/4                                      t/IPC-Run3-ProfLogReader.t .... ok
+t/IPC-Run3-ProfPP.t ........... t/IPC-Run3-ProfPP.t ........... 1/1                                      t/IPC-Run3-ProfPP.t ........... ok
+t/IPC-Run3-ProfReporter.t ..... t/IPC-Run3-ProfReporter.t ..... 1/7                                      t/IPC-Run3-ProfReporter.t ..... ok
+t/IPC-Run3.t .................. t/IPC-Run3.t .................. 1/28                                        t/IPC-Run3.t .................. ok
+t/pod-coverage.t ..............                                      t/pod-coverage.t .............. skipped: Test::Pod::Coverage 1.04 required for testing POD coverage
+t/pod.t .......................                                      t/pod.t ....................... skipped: Test::Pod 1.00 required for testing POD
+t/utf8.t ...................... t/utf8.t ...................... 1/3                                      t/utf8.t ...................... ok
+All tests successful.
+Files=13, Tests=64,  1 wallclock secs ( 0.06 usr  0.02 sys +  0.41 cusr  0.17 csys =  0.66 CPU)
+Result: PASS
+  RJBS/IPC-Run3-0.045.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  RJBS/IPC-Run3-0.045.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running make for A/AD/ADAMK/Test-Script-1.07.tar.gz
+  Has already been unwrapped into directory /home/mo/.cpan/build/Test-Script-1.07-E6NmBi
+
+  CPAN.pm: Going to build A/AD/ADAMK/Test-Script-1.07.tar.gz
+
+cp lib/Test/Script.pm blib/lib/Test/Script.pm
+Manifying blib/man3/Test::Script.3pm
+  ADAMK/Test-Script-1.07.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'inc', 'blib/lib', 'blib/arch')" t/*.t
+t/01_compile.t ........ t/01_compile.t ........ 1/3                              t/01_compile.t ........ ok
+t/02_compiles_good.t .. t/02_compiles_good.t .. 1/4                              t/02_compiles_good.t .. ok
+t/03_compiles_bad.t ... t/03_compiles_bad.t ... 1/5                              t/03_compiles_bad.t ... ok
+t/04_runs_good.t ...... t/04_runs_good.t ...... 1/4                              t/04_runs_good.t ...... ok
+t/05_runs_bad.t ....... t/05_runs_bad.t ....... 1/4                              t/05_runs_bad.t ....... ok
+t/97_meta.t ...........                              t/97_meta.t ........... skipped: Author tests not required for installation
+t/98_pod.t ............                              t/98_pod.t ............ skipped: Author tests not required for installation
+t/99_pmv.t ............                              t/99_pmv.t ............ skipped: Author tests not required for installation
+All tests successful.
+Files=8, Tests=20,  1 wallclock secs ( 0.05 usr  0.02 sys +  0.48 cusr  0.12 csys =  0.67 CPU)
+Result: PASS
+  ADAMK/Test-Script-1.07.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  ADAMK/Test-Script-1.07.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running make for A/AD/ADAMK/File-Which-1.09.tar.gz
+  Has already been unwrapped into directory /home/mo/.cpan/build/File-Which-1.09-V_4C7J
+
+  CPAN.pm: Going to build A/AD/ADAMK/File-Which-1.09.tar.gz
+
+cp lib/File/Which.pm blib/lib/File/Which.pm
+cp script/pwhich blib/script/pwhich
+/usr/bin/perl -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/pwhich
+Manifying blib/man1/pwhich.1p
+Manifying blib/man3/File::Which.3pm
+  ADAMK/File-Which-1.09.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/01_compile.t .. t/01_compile.t .. 1/2                        t/01_compile.t .. ok
+t/02_all.t ...... t/02_all.t ...... 1/4                        t/02_all.t ...... ok
+t/03_simple.t ... t/03_simple.t ... 1/10                          t/03_simple.t ... ok
+t/04_pwhich.t ... t/04_pwhich.t ... 1/4                        t/04_pwhich.t ... ok
+t/97_meta.t .....                        t/97_meta.t ..... skipped: Author tests not required for installation
+t/98_pod.t ......                        t/98_pod.t ...... skipped: Author tests not required for installation
+t/99_pmv.t ......                        t/99_pmv.t ...... skipped: Author tests not required for installation
+All tests successful.
+Files=7, Tests=20,  0 wallclock secs ( 0.04 usr  0.01 sys +  0.24 cusr  0.07 csys =  0.36 CPU)
+Result: PASS
+  ADAMK/File-Which-1.09.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/bin'
+Do not have write permissions on '/usr/local/bin'
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  ADAMK/File-Which-1.09.tar.gz
+  /usr/bin/make install  -- NOT OK
+----
+  You may have to su to root to install the package
+  (Or you may want to run something like
+    o conf make_install_make_command 'sudo make'
+  to raise your permissions.Running install for module 'File::Which'
+Running make for A/AD/ADAMK/File-Which-1.09.tar.gz
+  Has already been unwrapped into directory /home/mo/.cpan/build/File-Which-1.09-V_4C7J
+  Has already been made
+Running make test
+  Has already been tested successfully
+Running make install
+  Already tried without success
+Running make for A/AD/ADAMK/File-HomeDir-0.98.tar.gz
+  Has already been unwrapped into directory /home/mo/.cpan/build/File-HomeDir-0.98-1wkXmS
+
+  CPAN.pm: Going to build A/AD/ADAMK/File-HomeDir-0.98.tar.gz
+
+cp lib/File/HomeDir/Darwin.pm blib/lib/File/HomeDir/Darwin.pm
+cp lib/File/HomeDir/Darwin/Cocoa.pm blib/lib/File/HomeDir/Darwin/Cocoa.pm
+cp lib/File/HomeDir/Test.pm blib/lib/File/HomeDir/Test.pm
+cp lib/File/HomeDir/MacOS9.pm blib/lib/File/HomeDir/MacOS9.pm
+cp lib/File/HomeDir/Driver.pm blib/lib/File/HomeDir/Driver.pm
+cp lib/File/HomeDir/Windows.pm blib/lib/File/HomeDir/Windows.pm
+cp lib/File/HomeDir.pm blib/lib/File/HomeDir.pm
+cp lib/File/HomeDir/Unix.pm blib/lib/File/HomeDir/Unix.pm
+cp lib/File/HomeDir/FreeDesktop.pm blib/lib/File/HomeDir/FreeDesktop.pm
+cp lib/File/HomeDir/Darwin/Carbon.pm blib/lib/File/HomeDir/Darwin/Carbon.pm
+Manifying blib/man3/File::HomeDir::Darwin::Cocoa.3pm
+Manifying blib/man3/File::HomeDir::Darwin.3pm
+Manifying blib/man3/File::HomeDir::Test.3pm
+Manifying blib/man3/File::HomeDir::MacOS9.3pm
+Manifying blib/man3/File::HomeDir::Driver.3pm
+Manifying blib/man3/File::HomeDir::Windows.3pm
+Manifying blib/man3/File::HomeDir.3pm
+Manifying blib/man3/File::HomeDir::Unix.3pm
+Manifying blib/man3/File::HomeDir::FreeDesktop.3pm
+Manifying blib/man3/File::HomeDir::Darwin::Carbon.3pm
+  ADAMK/File-HomeDir-0.98.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'inc', 'blib/lib', 'blib/arch')" t/*.t
+t/01_compile.t ........ t/01_compile.t ........ 1/11 # Implemented by: File::HomeDir::FreeDesktop
+                               t/01_compile.t ........ ok
+t/02_main.t ........... t/02_main.t ........... 1/39                                t/02_main.t ........... ok
+t/10_test.t ........... t/10_test.t ........... 1/30                                t/10_test.t ........... ok
+t/11_darwin.t .........                              t/11_darwin.t ......... skipped: Not running on Darwin
+t/12_darwin_carbon.t ..                              t/12_darwin_carbon.t .. skipped: Not running on 32-bit Darwin
+t/13_darwin_cocoa.t ...                              t/13_darwin_cocoa.t ... skipped: Not running on Darwin with Cocoa API using Mac::SystemDirectory
+All tests successful.
+Files=6, Tests=80,  1 wallclock secs ( 0.04 usr  0.02 sys +  0.22 cusr  0.05 csys =  0.33 CPU)
+Result: PASS
+  ADAMK/File-HomeDir-0.98.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  ADAMK/File-HomeDir-0.98.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running install for module 'Module::Metadata'
+Running make for D/DA/DAGOLDEN/Module-Metadata-1.000007.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/D/DA/DAGOLDEN/Module-Metadata-1.000007.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/D/DA/DAGOLDEN/Module-Metadata-1.000007.tar.gz ok
+
+  CPAN.pm: Going to build D/DA/DAGOLDEN/Module-Metadata-1.000007.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Writing Makefile for Module::Metadata
+Writing MYMETA.yml and MYMETA.json
+cp lib/Module/Metadata.pm blib/lib/Module/Metadata.pm
+Manifying blib/man3/Module::Metadata.3pm
+  DAGOLDEN/Module-Metadata-1.000007.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/metadata.t .. t/metadata.t .. 1/113                          t/metadata.t .. ok
+t/version.t ... t/version.t ... 1/4                      t/version.t ... ok
+All tests successful.
+Files=2, Tests=117,  0 wallclock secs ( 0.04 usr  0.00 sys +  0.21 cusr  0.02 csys =  0.27 CPU)
+Result: PASS
+  DAGOLDEN/Module-Metadata-1.000007.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  DAGOLDEN/Module-Metadata-1.000007.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running install for module 'Perl::OSType'
+Running make for D/DA/DAGOLDEN/Perl-OSType-1.002.tar.gz
+Fetching with LWP:
+http://gd.tuwien.ac.at/languages/perl/CPAN/authors/id/D/DA/DAGOLDEN/Perl-OSType-1.002.tar.gz
+Checksum for /home/mo/.cpan/sources/authors/id/D/DA/DAGOLDEN/Perl-OSType-1.002.tar.gz ok
+
+  CPAN.pm: Going to build D/DA/DAGOLDEN/Perl-OSType-1.002.tar.gz
+
+Checking if your kit is complete...
+Looks good
+Writing Makefile for Perl::OSType
+Writing MYMETA.yml and MYMETA.json
+cp lib/Perl/OSType.pm blib/lib/Perl/OSType.pm
+Manifying blib/man3/Perl::OSType.3pm
+  DAGOLDEN/Perl-OSType-1.002.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/00-compile.t .. t/00-compile.t .. 1/1                        t/00-compile.t .. ok
+t/OSType.t ...... t/OSType.t ...... 1/?                         t/OSType.t ...... ok
+All tests successful.
+Files=2, Tests=20,  0 wallclock secs ( 0.01 usr  0.02 sys +  0.08 cusr  0.02 csys =  0.13 CPU)
+Result: PASS
+  DAGOLDEN/Perl-OSType-1.002.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR: Can't create '/usr/local/man/man3'
+mkdir /usr/local/man/man3: Permission denied at /usr/share/perl/5.12/ExtUtils/Install.pm line 494
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ at -e line 1
+make: *** [pure_site_install] Error 13
+  DAGOLDEN/Perl-OSType-1.002.tar.gz
+  /usr/bin/make install  -- NOT OK
+Running Build for D/DA/DAGOLDEN/Module-Build-0.3800.tar.gz
+  Has already been unwrapped into directory /home/mo/.cpan/build/Module-Build-0.3800-kBGwpz
+
+  CPAN.pm: Going to build D/DA/DAGOLDEN/Module-Build-0.3800.tar.gz
+
+Building Module-Build
+  DAGOLDEN/Module-Build-0.3800.tar.gz
+  ./Build -- OK
+Running Build test
+t/00-compile.t ................. t/00-compile.t ................. 1/28 t/00-compile.t ................. 8/28 t/00-compile.t ................. 18/28                                         t/00-compile.t ................. ok
+t/PL_files.t ................... t/PL_files.t ................... 1/8                                       t/PL_files.t ................... ok
+t/actions/installdeps.t ........ t/actions/installdeps.t ........ 1/6 t/actions/installdeps.t ........ 3/6                                       t/actions/installdeps.t ........ ok
+t/actions/manifest_skip.t ...... t/actions/manifest_skip.t ...... 1/7 t/actions/manifest_skip.t ...... 5/7                                       t/actions/manifest_skip.t ...... ok
+t/add_property.t ............... t/add_property.t ............... 1/27                                         t/add_property.t ............... ok
+t/basic.t ...................... t/basic.t ...................... 1/58 t/basic.t ...................... 25/58                                         t/basic.t ...................... ok
+t/bundle_inc.t .................                                       t/bundle_inc.t ................. skipped: $ENV{MB_TEST_EXPERIMENTAL} is not set
+t/compat.t ..................... t/compat.t ..................... 1/? t/compat.t ..................... 9/? t/compat.t ..................... 15/? t/compat.t ..................... 26/? t/compat.t ..................... 33/? t/compat.t ..................... 46/? t/compat.t ..................... 57/? t/compat.t ..................... 68/? t/compat.t ..................... 74/? t/compat.t ..................... 85/? t/compat.t ..................... 91/? t/compat.t ..................... 104/? t/compat.t ..................... 116/? t/compat.t ..................... 126/? t/compat.t ..................... 131/? t/compat.t ..................... 141/? t/compat.t ..................... 145/? t/compat.t ..................... 152/?                                         t/compat.t ..................... ok
+t/compat/exit.t ................ t/compat/exit.t ................ 1/3                                       t/compat/exit.t ................ ok
+t/debug.t ...................... t/debug.t ...................... 1/1                                       t/debug.t ...................... ok
+t/destinations.t ............... t/destinations.t ............... 1/113                                           t/destinations.t ............... ok
+t/ext.t ........................ t/ext.t ........................ 1/185 t/ext.t ........................ 160/185                                           t/ext.t ........................ ok
+t/extend.t ..................... t/extend.t ..................... 1/64                                         t/extend.t ..................... ok
+t/files.t ...................... t/files.t ...................... 1/4                                       t/files.t ...................... ok
+t/help.t ....................... t/help.t ....................... 1/23                                         t/help.t ....................... ok
+t/install.t .................... t/install.t .................... 1/34 ^C  DAGOLDEN/Module-Build-0.3800.tar.gz
+  ./Build test -- NOT OK
+//hint// to see the cpan-testers results for installing this module, try:
+  reports DAGOLDEN/Module-Build-0.3800.tar.gz
+Running Build install
+  make test had returned bad status, won't install without force
+Failed during this command:
+ ANDYA/Test-Harness-3.23.tar.gz               : install NO
+ DAGOLDEN/ExtUtils-CBuilder-0.280202.tar.gz   : install NO
+ MSCHWERN/ExtUtils-MakeMaker-6.62.tar.gz      : install NO
+ SMUELLER/PathTools-3.33.tar.gz               : install NO
+ GBARR/Scalar-List-Utils-1.23.tar.gz          : install NO
+ MSCHWERN/Test-Simple-0.98.tar.gz             : install NO
+ SMUELLER/Data-Dumper-2.131.tar.gz            : install NO
+ MSHELOR/Digest-SHA-5.70.tar.gz               : install NO
+ PMQS/Compress-Raw-Bzip2-2.045.tar.gz         : install NO
+ PMQS/Compress-Raw-Zlib-2.045.tar.gz          : install NO
+ PMQS/IO-Compress-2.046.tar.gz                : install NO
+ BINGOS/Archive-Tar-1.82.tar.gz               : install NO
+ ADAMK/Archive-Zip-1.30.tar.gz                : install NO
+ ILYAZ/modules/Term-ReadLine-Perl-1.0303.tar.gz: install NO
+ INGY/YAML-0.77.tar.gz                        : install NO
+ DAGOLDEN/Parse-CPAN-Meta-1.4401.tar.gz       : install NO
+ RCLAMP/Text-Glob-0.09.tar.gz                 : install NO
+ ANDK/CPAN-1.9800.tar.gz                      : install NO
+ KWILLIAMS/Probe-Perl-0.01.tar.gz             : install NO
+ RJBS/IPC-Run3-0.045.tar.gz                   : install NO
+ ADAMK/Test-Script-1.07.tar.gz                : install NO
+ ADAMK/File-Which-1.09.tar.gz                 : install NO
+ ADAMK/File-HomeDir-0.98.tar.gz               : install NO
+ DAGOLDEN/Module-Metadata-1.000007.tar.gz     : install NO
+ DAGOLDEN/Perl-OSType-1.002.tar.gz            : install NO
+ DAGOLDEN/Module-Build-0.3800.tar.gz          : make_test NO
+
+[4mcpan[2]> [24m[1m
