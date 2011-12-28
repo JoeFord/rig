@@ -89,4 +89,9 @@ transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metaba
 Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] 
 transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] we  
 
-Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] 
+Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] no
+You can create a Metabase profile by typing 'metabase-profile' in your
+command prompt and moving the resulting file to the location you specified.
+If you did not specify an absolute path, put it in your .cpanreporter
+directory.  You will need to do this before continuing.
+transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] 
