@@ -12,4 +12,7 @@ You may want to kill the other job and delete the lockfile. On UNIX try:
 
 ]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ ls
 [0m[01;34mbin[0m  dummy  [01;34mlib[0m  [01;34mman[0m  nohup.out  [01;34mtalk[0m
-]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ 
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ exit
+exit
+
+Script done on Wed 28 Dec 2011 01:51:48 PM PST

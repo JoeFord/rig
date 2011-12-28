@@ -8,4 +8,10 @@ Enter 'h' for help.
 [4mcpan[1]> [24m[1mq
 [0mTerminal does not support GetHistory.
 Lockfile removed.
-]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ 
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ cpan
+Terminal does not support AddHistory.
+
+cpan shell -- CPAN exploration and modules installation (v1.9456)
+Enter 'h' for help.
+
+[4mcpan[1]> [24m[1m
