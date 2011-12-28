@@ -1,4 +1,10 @@
 Script started on Tue 27 Dec 2011 05:54:15 PM PST
 ]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ ls
 [0m[01;34mbin[0m  [01;34mlib[0m  [01;34mman[0m  nohup.out  [01;34mtalk[0m  [01;32mtalk.sh[0m
-]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ 
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ cd /[K/rev/bin/cpan
+bash: cd: /rev/bin/cpan: Not a directory
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ cd [K[K[K/[K/rev/i[Kbin/cpan
+Terminal does not support AddHistory.
+
+There seems to be running another CPAN process (pid 7460).  Contacting...
+Other job not responding. Shall I overwrite the lockfile '/home/mo/.cpan/.lock'? (Y/n) [y] b 
