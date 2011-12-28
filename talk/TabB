@@ -1,2 +1,8 @@
 Script started on Tue 27 Dec 2011 05:54:25 PM PST
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ cat talk.sh
+#!/bin/sh
+cd /rev
+git add -A
+git commit -m talk
+git push origin cpan
 ]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ 
