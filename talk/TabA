@@ -7,4 +7,9 @@ bash: cd: /rev/bin/cpan: Not a directory
 Terminal does not support AddHistory.
 
 There seems to be running another CPAN process (pid 7460).  Contacting...
-Other job not responding. Shall I overwrite the lockfile '/home/mo/.cpan/.lock'? (Y/n) [y] b 
+Other job not responding. Shall I overwrite the lockfile '/home/mo/.cpan/.lock'? (Y/n) [y] b y
+
+cpan shell -- CPAN exploration and modules installation (v1.960001)
+Enter 'h' for help.
+
+[4mcpan[1]> [24m[1m
