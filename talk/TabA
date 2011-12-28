@@ -87,3 +87,4 @@ the default value.
 transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] 
 
 Would you like to run 'metabase-profile' now to create '/home/mo/.cpanreporter/metabase_id.json'? [y] 
+transport? [Metabase uri https://metabase.cpantesters.org/api/v1/ id_file metabase_id.json] 
