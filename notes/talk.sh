@@ -2,4 +2,4 @@
 cd /rev
 git add -A
 git commit -m talk
-git push origin cpan
+git push origin new
