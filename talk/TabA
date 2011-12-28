@@ -1,2 +1,8 @@
 Script started on Wed 28 Dec 2011 02:13:48 PM PST
-]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ 
+]0;mo@sciencemachine: /revmo@sciencemachine:/rev$ cpan
+Terminal does not support AddHistory.
+
+cpan shell -- CPAN exploration and modules installation (v1.9456)
+Enter 'h' for help.
+
+[4mcpan[1]> [24m[1m
