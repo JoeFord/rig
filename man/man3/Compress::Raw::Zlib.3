@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "Compress::Raw::Zlib 3"
-.TH Compress::Raw::Zlib 3 "2011-12-23" "perl v5.14.2" "Perl Programmers Reference Guide"
+.TH Compress::Raw::Zlib 3 "2011-12-04" "perl v5.14.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -924,6 +924,102 @@ Although it is possible (with some effort on your part) to use this module
 to access .zip files, there are other perl modules available that will
 do all the hard work for you. Check out \f(CW\*(C`Archive::Zip\*(C'\fR,
 \&\f(CW\*(C`IO::Compress::Zip\*(C'\fR and \f(CW\*(C`IO::Uncompress::Unzip\*(C'\fR.
+.SH "FAQ"
+.IX Header "FAQ"
+.SS "Compatibility with Unix compress/uncompress."
+.IX Subsection "Compatibility with Unix compress/uncompress."
+This module is not compatible with Unix \f(CW\*(C`compress\*(C'\fR.
+.PP
+If you have the \f(CW\*(C`uncompress\*(C'\fR program available, you can use this to read
+compressed files
+.PP
+.Vb 4
+\&    open F, "uncompress \-c $filename |";
+\&    while (<F>)
+\&    {
+\&        ...
+.Ve
+.PP
+Alternatively, if you have the \f(CW\*(C`gunzip\*(C'\fR program available, you can use
+this to read compressed files
+.PP
+.Vb 4
+\&    open F, "gunzip \-c $filename |";
+\&    while (<F>)
+\&    {
+\&        ...
+.Ve
+.PP
+and this to write compress files, if you have the \f(CW\*(C`compress\*(C'\fR program
+available
+.PP
+.Vb 4
+\&    open F, "| compress \-c $filename ";
+\&    print F "data";
+\&    ...
+\&    close F ;
+.Ve
+.SS "Accessing .tar.Z files"
+.IX Subsection "Accessing .tar.Z files"
+See previous \s-1FAQ\s0 item.
+.PP
+If the \f(CW\*(C`Archive::Tar\*(C'\fR module is installed and either the \f(CW\*(C`uncompress\*(C'\fR or
+\&\f(CW\*(C`gunzip\*(C'\fR programs are available, you can use one of these workarounds to
+read \f(CW\*(C`.tar.Z\*(C'\fR files.
+.PP
+Firstly with \f(CW\*(C`uncompress\*(C'\fR
+.PP
+.Vb 3
+\&    use strict;
+\&    use warnings;
+\&    use Archive::Tar;
+\&
+\&    open F, "uncompress \-c $filename |";
+\&    my $tar = Archive::Tar\->new(*F);
+\&    ...
+.Ve
+.PP
+and this with \f(CW\*(C`gunzip\*(C'\fR
+.PP
+.Vb 3
+\&    use strict;
+\&    use warnings;
+\&    use Archive::Tar;
+\&
+\&    open F, "gunzip \-c $filename |";
+\&    my $tar = Archive::Tar\->new(*F);
+\&    ...
+.Ve
+.PP
+Similarly, if the \f(CW\*(C`compress\*(C'\fR program is available, you can use this to
+write a \f(CW\*(C`.tar.Z\*(C'\fR file
+.PP
+.Vb 4
+\&    use strict;
+\&    use warnings;
+\&    use Archive::Tar;
+\&    use IO::File;
+\&
+\&    my $fh = new IO::File "| compress \-c >$filename";
+\&    my $tar = Archive::Tar\->new();
+\&    ...
+\&    $tar\->write($fh);
+\&    $fh\->close ;
+.Ve
+.SS "Zlib Library Version Support"
+.IX Subsection "Zlib Library Version Support"
+By default \f(CW\*(C`Compress::Raw::Zlib\*(C'\fR will build with a private copy of version
+1.2.5 of the zlib library. (See the \fI\s-1README\s0\fR file for details of
+how to override this behaviour)
+.PP
+If you decide to use a different version of the zlib library, you need to be
+aware of the following issues
+.IP "\(bu" 5
+First off, you must have zlib 1.0.5 or better.
+.IP "\(bu" 5
+You need to have zlib 1.2.1 or better if you want to use the \f(CW\*(C`\-Merge\*(C'\fR
+option with \f(CW\*(C`IO::Compress::Gzip\*(C'\fR, \f(CW\*(C`IO::Compress::Deflate\*(C'\fR and
+\&\f(CW\*(C`IO::Compress::RawDeflate\*(C'\fR.
 .SH "CONSTANTS"
 .IX Header "CONSTANTS"
 All the \fIzlib\fR constants are automatically imported when you make use
@@ -932,7 +1028,7 @@ of \fICompress::Raw::Zlib\fR.
 .IX Header "SEE ALSO"
 Compress::Zlib, IO::Compress::Gzip, IO::Uncompress::Gunzip, IO::Compress::Deflate, IO::Uncompress::Inflate, IO::Compress::RawDeflate, IO::Uncompress::RawInflate, IO::Compress::Bzip2, IO::Uncompress::Bunzip2, IO::Compress::Lzma, IO::Uncompress::UnLzma, IO::Compress::Xz, IO::Uncompress::UnXz, IO::Compress::Lzop, IO::Uncompress::UnLzop, IO::Compress::Lzf, IO::Uncompress::UnLzf, IO::Uncompress::AnyInflate, IO::Uncompress::AnyUncompress
 .PP
-Compress::Zlib::FAQ
+IO::Compress::FAQ
 .PP
 File::GlobMapper, Archive::Zip,
 Archive::Tar,

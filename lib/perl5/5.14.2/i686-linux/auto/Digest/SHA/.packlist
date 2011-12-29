@@ -1,0 +1,6 @@
+/rig/bin/shasum
+/rig/lib/perl5/5.14.2/i686-linux/Digest/SHA.pm
+/rig/lib/perl5/5.14.2/i686-linux/auto/Digest/SHA/SHA.bs
+/rig/lib/perl5/5.14.2/i686-linux/auto/Digest/SHA/SHA.so
+/rig/man/man1/shasum.1
+/rig/man/man3/Digest::SHA.3

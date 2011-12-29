@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "Archive::Tar::File 3"
-.TH Archive::Tar::File 3 "2011-12-23" "perl v5.14.2" "Perl Programmers Reference Guide"
+.TH Archive::Tar::File 3 "2011-11-21" "perl v5.14.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -285,6 +285,21 @@ Rename the current file to \f(CW$new_name\fR.
 .PP
 Note that you must specify a Unix path for \f(CW$new_name\fR, since per tar
 standard, all files in the archive must be Unix paths.
+.PP
+Returns true on success and false on failure.
+.ie n .SS "$bool = $file\->chmod $mode)"
+.el .SS "\f(CW$bool\fP = \f(CW$file\fP\->chmod \f(CW$mode\fP)"
+.IX Subsection "$bool = $file->chmod $mode)"
+Change mode of \f(CW$file\fR to \f(CW$mode\fR. The mode can be a string or a number
+which is interpreted as octal whether or not a leading 0 is given.
+.PP
+Returns true on success and false on failure.
+.ie n .SS "$bool = $file\->chown( $user [, $group])"
+.el .SS "\f(CW$bool\fP = \f(CW$file\fP\->chown( \f(CW$user\fP [, \f(CW$group\fP])"
+.IX Subsection "$bool = $file->chown( $user [, $group])"
+Change owner of \f(CW$file\fR to \f(CW$user\fR. If a \f(CW$group\fR is given that is changed
+as well. You can also pass a single parameter with a colon separating the
+use and group as in 'root:wheel'.
 .PP
 Returns true on success and false on failure.
 .SH "Convenience methods"

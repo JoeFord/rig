@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "Archive::Tar 3"
-.TH Archive::Tar 3 "2011-12-23" "perl v5.14.2" "Perl Programmers Reference Guide"
+.TH Archive::Tar 3 "2011-11-21" "perl v5.14.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -144,6 +144,9 @@ Archive::Tar \- module for manipulations of tar archives
 \&    $tar\->add_data(\*(Aqfile/baz.txt\*(Aq, \*(AqThis is the contents now\*(Aq);
 \&
 \&    $tar\->rename(\*(Aqoldname\*(Aq, \*(Aqnew/file/name\*(Aq);
+\&    $tar\->chown(\*(Aq/\*(Aq, \*(Aqroot\*(Aq);
+\&    $tar\->chown(\*(Aq/\*(Aq, \*(Aqroot:root\*(Aq);
+\&    $tar\->chmod(\*(Aq/tmp\*(Aq, \*(Aq1777\*(Aq);
 \&
 \&    $tar\->write(\*(Aqfiles.tar\*(Aq);                   # plain tar
 \&    $tar\->write(\*(Aqfiles.tgz\*(Aq, COMPRESS_GZIP);    # gzip compressed
@@ -204,6 +207,13 @@ very big archives, and are only interested in the first few files.
 .IX Item "filter"
 Can be set to a regular expression.  Only files with names that match
 the expression will be read.
+.IP "md5" 4
+.IX Item "md5"
+Set to 1 and the md5sum of files will be returned (instead of file data)
+    my \f(CW$iter\fR = Archive::Tar\->iter( \f(CW$file\fR,  1, {md5 => 1} );
+    while( my \f(CW$f\fR = \f(CW$iter\fR\->() ) {
+        print \f(CW$f\fR\->data . \*(L"\et\*(R" . \f(CW$f\fR\->full_path . $/;
+    }
 .IP "extract" 4
 .IX Item "extract"
 If set to true, immediately extract entries when reading them. This
@@ -298,6 +308,18 @@ Rename the file of the in-memory archive to \f(CW$new_name\fR.
 .PP
 Note that you must specify a Unix path for \f(CW$new_name\fR, since per tar
 standard, all files in the archive must be Unix paths.
+.PP
+Returns true on success and false on failure.
+.ie n .SS "$tar\->chmod( $file, $mode )"
+.el .SS "\f(CW$tar\fP\->chmod( \f(CW$file\fP, \f(CW$mode\fP )"
+.IX Subsection "$tar->chmod( $file, $mode )"
+Change mode of \f(CW$file\fR to \f(CW$mode\fR.
+.PP
+Returns true on success and false on failure.
+.ie n .SS "$tar\->chown( $file, $uname [, $gname] )"
+.el .SS "\f(CW$tar\fP\->chown( \f(CW$file\fP, \f(CW$uname\fP [, \f(CW$gname\fP] )"
+.IX Subsection "$tar->chown( $file, $uname [, $gname] )"
+Change owner \f(CW$file\fR to \f(CW$uname\fR and \f(CW$gname\fR.
 .PP
 Returns true on success and false on failure.
 .ie n .SS "$tar\->remove (@filenamelist)"
@@ -726,7 +748,7 @@ doing.
 .el .SS "\f(CW$Archive::Tar::ZERO_PAD_NUMBERS\fP"
 .IX Subsection "$Archive::Tar::ZERO_PAD_NUMBERS"
 This variable holds a boolean indicating if we will create
-zero padded numbers for \f(CW\*(C`size\*(C'\fR, \f(CW\*(C`mtime\*(C'\fR and \f(CW\*(C`checksum\*(C'\fR. 
+zero padded numbers for \f(CW\*(C`size\*(C'\fR, \f(CW\*(C`mtime\*(C'\fR and \f(CW\*(C`checksum\*(C'\fR.
 The default is \f(CW0\fR, indicating that we will create space padded
 numbers. Added for compatibility with \f(CW\*(C`busybox\*(C'\fR implementations.
 .SH "FAQ"
@@ -911,7 +933,7 @@ because a tarball can contain many files, and each of which could be
 encoded in a different way.
 .SH "CAVEATS"
 .IX Header "CAVEATS"
-The \s-1AIX\s0 tar does not fill all unused space in the tar archive with 0x00. 
+The \s-1AIX\s0 tar does not fill all unused space in the tar archive with 0x00.
 This sometimes leads to warning messages from \f(CW\*(C`Archive::Tar\*(C'\fR.
 .PP
 .Vb 1
@@ -926,15 +948,15 @@ of \s-1AIX\s0, all of which should be coming out in the 4th quarter of 2009:
 \& AIX 5.3 TL8 SP8
 \& AIX 5.3 TL9 SP5
 \& AIX 5.3 TL10 SP2
-\& 
+\&
 \& AIX 6.1 TL0 SP11
 \& AIX 6.1 TL1 SP7
 \& AIX 6.1 TL2 SP6
 \& AIX 6.1 TL3 SP3
 .Ve
 .PP
-The \s-1IBM\s0 \s-1APAR\s0 number for this problem is \s-1IZ50240\s0 (Reported component \s-1ID:\s0 
-5765G0300 / \s-1AIX\s0 5.3). It is possible to get an ifix for that problem. 
+The \s-1IBM\s0 \s-1APAR\s0 number for this problem is \s-1IZ50240\s0 (Reported component \s-1ID:\s0
+5765G0300 / \s-1AIX\s0 5.3). It is possible to get an ifix for that problem.
 If you need an ifix please contact your local \s-1IBM\s0 \s-1AIX\s0 support.
 .SH "TODO"
 .IX Header "TODO"
