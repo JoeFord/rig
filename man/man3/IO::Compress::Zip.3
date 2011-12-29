@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "IO::Compress::Zip 3"
-.TH IO::Compress::Zip 3 "2011-12-23" "perl v5.14.2" "Perl Programmers Reference Guide"
+.TH IO::Compress::Zip 3 "2011-12-12" "perl v5.14.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -184,9 +184,12 @@ zip files and buffers. It is not a general-purpose file archiver. If that
 is what you want, check out \f(CW\*(C`Archive::Zip\*(C'\fR.
 .PP
 At present three compression methods are supported by IO::Compress::Zip,
-namely Store (no compression at all), Deflate and Bzip2.
+namely Store (no compression at all), Deflate, Bzip2 and \s-1LZMA\s0.
 .PP
 Note that to create Bzip2 content, the module \f(CW\*(C`IO::Compress::Bzip2\*(C'\fR must
+be installed.
+.PP
+Note that to create \s-1LZMA\s0 content, the module \f(CW\*(C`IO::Compress::Lzma\*(C'\fR must
 be installed.
 .PP
 For reading zip files/buffers, see the companion module 
@@ -252,10 +255,10 @@ See File::GlobMapper for more details.
 If the \f(CW$input\fR parameter is any other type, \f(CW\*(C`undef\*(C'\fR will be returned.
 .PP
 In addition, if \f(CW$input\fR is a simple filename, the default values for
-the \f(CW\*(C`Name\*(C'\fR, \f(CW\*(C`Time\*(C'\fR, \f(CW\*(C`ExtAttr\*(C'\fR and \f(CW\*(C`exTime\*(C'\fR options will be sourced from that file.
+the \f(CW\*(C`Name\*(C'\fR, \f(CW\*(C`Time\*(C'\fR, \f(CW\*(C`ExtAttr\*(C'\fR, \f(CW\*(C`exUnixN\*(C'\fR and \f(CW\*(C`exTime\*(C'\fR options will be sourced from that file.
 .PP
 If you do not want to use these defaults they can be overridden by
-explicitly setting the \f(CW\*(C`Name\*(C'\fR, \f(CW\*(C`Time\*(C'\fR, \f(CW\*(C`ExtAttr\*(C'\fR and \f(CW\*(C`exTime\*(C'\fR options or by setting the
+explicitly setting the \f(CW\*(C`Name\*(C'\fR, \f(CW\*(C`Time\*(C'\fR, \f(CW\*(C`ExtAttr\*(C'\fR, \f(CW\*(C`exUnixN\*(C'\fR and \f(CW\*(C`exTime\*(C'\fR options or by setting the
 \&\f(CW\*(C`Minimal\*(C'\fR parameter.
 .PP
 \fIThe \f(CI$output\fI parameter\fR
@@ -520,11 +523,70 @@ This parameter defaults to 0.
 .IX Item "Name => $string"
 Stores the contents of \f(CW$string\fR in the zip filename header field.
 .Sp
-If \f(CW\*(C`Name\*(C'\fR is not specified and the \f(CW$input\fR parameter is a filename that
-will be used for the zip filename header field.
+If \f(CW\*(C`Name\*(C'\fR is not specified and the \f(CW$input\fR parameter is a filename, the
+value of \f(CW$input\fR will be used for the zip filename header field.
 .Sp
 If \f(CW\*(C`Name\*(C'\fR is not specified and the \f(CW$input\fR parameter is not a filename,
 no zip filename field will be created.
+.Sp
+Note that both the \f(CW\*(C`CanonicalName\*(C'\fR and \f(CW\*(C`FilterName\*(C'\fR options
+can modify the value used for the zip filename header field.
+.ie n .IP """CanonicalName => 0|1""" 5
+.el .IP "\f(CWCanonicalName => 0|1\fR" 5
+.IX Item "CanonicalName => 0|1"
+This option controls whether the filename field in the zip header is
+\&\fInormalized\fR into Unix format before being written to the zip file.
+.Sp
+It is recommended that you enable this option unless you really need
+to create a non-standard Zip file.
+.Sp
+This is what \s-1APPNOTE\s0.TXT has to say on what should be stored in the zip
+filename header field.
+.Sp
+.Vb 6
+\&    The name of the file, with optional relative path.          
+\&    The path stored should not contain a drive or
+\&    device letter, or a leading slash.  All slashes
+\&    should be forward slashes \*(Aq/\*(Aq as opposed to
+\&    backwards slashes \*(Aq\e\*(Aq for compatibility with Amiga
+\&    and UNIX file systems etc.
+.Ve
+.Sp
+This option defaults to \fBfalse\fR.
+.ie n .IP """FilterName => sub { ... }""" 5
+.el .IP "\f(CWFilterName => sub { ... }\fR" 5
+.IX Item "FilterName => sub { ... }"
+This option allow the filename field in the zip header to be modified
+before it is written to the zip file.
+.Sp
+This option takes a parameter that must be a reference to a sub.  On entry
+to the sub the \f(CW$_\fR variable will contain the name to be filtered. If no
+filename is available \f(CW$_\fR will contain an empty string.
+.Sp
+The value of \f(CW$_\fR when the sub returns will be  stored in the filename
+header field.
+.Sp
+Note that if \f(CW\*(C`CanonicalName\*(C'\fR is enabled, a
+normalized filename will be passed to the sub.
+.Sp
+If you use \f(CW\*(C`FilterName\*(C'\fR to modify the filename, it is your responsibility
+to keep the filename in Unix format.
+.Sp
+Although this option can be used with the \s-1OO\s0 ointerface, it is of most use
+with the one-shot interface. For example, the code below shows how
+\&\f(CW\*(C`FilterName\*(C'\fR can be used to remove the path component from a series of
+filenames before they are stored in \f(CW$zipfile\fR.
+.Sp
+.Vb 4
+\&    sub compressTxtFiles
+\&    {
+\&        my $zipfile = shift ;
+\&        my $dir     = shift ;
+\&
+\&        zip [ <$dir/*.txt> ] => $zipfile,
+\&            FilterName => sub { s[^$dir/][] } ;  
+\&    }
+.Ve
 .ie n .IP """Time => $number""" 5
 .el .IP "\f(CWTime => $number\fR" 5
 .IX Item "Time => $number"
@@ -575,17 +637,36 @@ By default no extended time field is created.
 .el .IP "\f(CWexUnix2 => [$uid, $gid]\fR" 5
 .IX Item "exUnix2 => [$uid, $gid]"
 This option expects an array reference with exactly two elements: \f(CW$uid\fR
-and \f(CW$gid\fR. These values correspond to the numeric user \s-1ID\s0 and group \s-1ID\s0
-of the owner of the files respectively.
+and \f(CW$gid\fR. These values correspond to the numeric User \s-1ID\s0 (\s-1UID\s0) and Group \s-1ID\s0
+(\s-1GID\s0) of the owner of the files respectively.
 .Sp
 When the \f(CW\*(C`exUnix2\*(C'\fR option is present it will trigger the creation of a
-Unix2 extra field (\s-1ID\s0 is \*(L"Ux\*(R") in the local zip. This will be populated
-with \f(CW$uid\fR and \f(CW$gid\fR. In addition an empty Unix2 extra field will also
-be created in the central zip header
+Unix2 extra field (\s-1ID\s0 is \*(L"Ux\*(R") in the local zip header. This will be populated
+with \f(CW$uid\fR and \f(CW$gid\fR. An empty Unix2 extra field will also
+be created in the central zip header.
+.Sp
+Note \- The \s-1UID\s0 & \s-1GID\s0 are stored as 16\-bit
+integers in the \*(L"Ux\*(R" field. Use \f(CW\*(C`exUnixN\*(C'\fR if your \s-1UID\s0 or \s-1GID\s0 are
+32\-bit.
 .Sp
 If the \f(CW\*(C`Minimal\*(C'\fR option is set to true, this option will be ignored.
 .Sp
 By default no Unix2 extra field is created.
+.ie n .IP """exUnixN => [$uid, $gid]""" 5
+.el .IP "\f(CWexUnixN => [$uid, $gid]\fR" 5
+.IX Item "exUnixN => [$uid, $gid]"
+This option expects an array reference with exactly two elements: \f(CW$uid\fR
+and \f(CW$gid\fR. These values correspond to the numeric User \s-1ID\s0 (\s-1UID\s0) and Group \s-1ID\s0
+(\s-1GID\s0) of the owner of the files respectively.
+.Sp
+When the \f(CW\*(C`exUnixN\*(C'\fR option is present it will trigger the creation of a
+UnixN extra field (\s-1ID\s0 is \*(L"ux\*(R") in bothe the local and central zip headers. 
+This will be populated with \f(CW$uid\fR and \f(CW$gid\fR. 
+The \s-1UID\s0 & \s-1GID\s0 are stored as 32\-bit integers.
+.Sp
+If the \f(CW\*(C`Minimal\*(C'\fR option is set to true, this option will be ignored.
+.Sp
+By default no UnixN extra field is created.
 .ie n .IP """Comment => $comment""" 5
 .el .IP "\f(CWComment => $comment\fR" 5
 .IX Item "Comment => $comment"
@@ -603,12 +684,12 @@ By default, no comment field is written to the zip file.
 .ie n .IP """Method => $method""" 5
 .el .IP "\f(CWMethod => $method\fR" 5
 .IX Item "Method => $method"
-Controls which compression method is used. At present three compression
-methods are supported, namely Store (no compression at all), Deflate and
-Bzip2.
+Controls which compression method is used. At present four compression
+methods are supported, namely Store (no compression at all), Deflate, 
+Bzip2 and Lzma.
 .Sp
-The symbols, \s-1ZIP_CM_STORE\s0, \s-1ZIP_CM_DEFLATE\s0 and \s-1ZIP_CM_BZIP2\s0 are used to
-select the compression method.
+The symbols, \s-1ZIP_CM_STORE\s0, \s-1ZIP_CM_DEFLATE\s0, \s-1ZIP_CM_BZIP2\s0 and \s-1ZIP_CM_LZMA\s0 
+are used to select the compression method.
 .Sp
 These constants are not imported by \f(CW\*(C`IO::Compress::Zip\*(C'\fR by default.
 .Sp
@@ -621,6 +702,10 @@ These constants are not imported by \f(CW\*(C`IO::Compress::Zip\*(C'\fR by defau
 Note that to create Bzip2 content, the module \f(CW\*(C`IO::Compress::Bzip2\*(C'\fR must
 be installed. A fatal error will be thrown if you attempt to create Bzip2
 content when \f(CW\*(C`IO::Compress::Bzip2\*(C'\fR is not available.
+.Sp
+Note that to create Lzma content, the module \f(CW\*(C`IO::Compress::Lzma\*(C'\fR must
+be installed. A fatal error will be thrown if you attempt to create Lzma
+content when \f(CW\*(C`IO::Compress::Lzma\*(C'\fR is not available.
 .Sp
 The default method is \s-1ZIP_CM_DEFLATE\s0.
 .ie n .IP """Stream => 0|1""" 5
@@ -636,11 +721,14 @@ The default is 1.
 .ie n .IP """Zip64 => 0|1""" 5
 .el .IP "\f(CWZip64 => 0|1\fR" 5
 .IX Item "Zip64 => 0|1"
-Create a Zip64 zip file/buffer. This option should only be used if you want
+Create a Zip64 zip file/buffer. This option is used if you want
 to store files larger than 4 Gig.
 .Sp
+\&\f(CW\*(C`Zip64\*(C'\fR will be automatically set, as needed, if working with the one-shot 
+interface when the input is either a filename or a scalar reference.
+.Sp
 If you intend to manipulate the Zip64 zip files created with this module
-using an external zip/unzip make sure that it supports Zip64.
+using an external zip/unzip, make sure that it supports Zip64.
 .Sp
 In particular, if you are using Info-Zip you need to have zip version 3.x
 or better to update a Zip64 archive and unzip version 6.x to read a zip64
@@ -696,6 +784,9 @@ Alternatively the list of subfields can by supplied as a scalar, thus
 \&    ExtraField => $rawdata
 .Ve
 .Sp
+In this case \f(CW\*(C`IO::Compress::Zip\*(C'\fR will check that \f(CW$rawdata\fR consists of 
+zero or more conformant sub-fields.
+.Sp
 The Extended Time field (\s-1ID\s0 \*(L"\s-1UT\s0\*(R"), set using the \f(CW\*(C`exTime\*(C'\fR option, and the
 Unix2 extra field (\s-1ID\s0 "Ux), set using the \f(CW\*(C`exUnix2\*(C'\fR option, are examples
 of extra fields.
@@ -708,7 +799,8 @@ The maximum size of an extra field 65535 bytes.
 .IX Item "Minimal => 1|0"
 If specified, this option will disable the creation of all extra fields
 in the zip local and central headers. So the \f(CW\*(C`exTime\*(C'\fR, \f(CW\*(C`exUnix2\*(C'\fR,
-\&\f(CW\*(C`ExtraFieldLocal\*(C'\fR and \f(CW\*(C`ExtraFieldCentral\*(C'\fR options will be ignored.
+\&\f(CW\*(C`exUnixN\*(C'\fR, \f(CW\*(C`ExtraFieldLocal\*(C'\fR and \f(CW\*(C`ExtraFieldCentral\*(C'\fR options will 
+be ignored.
 .Sp
 This parameter defaults to 0.
 .ie n .IP """BlockSize100K => number""" 5
@@ -734,6 +826,32 @@ This option is only valid if the \f(CW\*(C`Method\*(C'\fR is \s-1ZIP_CM_BZIP2\s0
 otherwise.
 .Sp
 The default is 0.
+.ie n .IP """Preset => number""" 5
+.el .IP "\f(CWPreset => number\fR" 5
+.IX Item "Preset => number"
+Used to choose the \s-1LZMA\s0 compression preset.
+.Sp
+Valid values are 0\-9 and \f(CW\*(C`LZMA_PRESET_DEFAULT\*(C'\fR.
+.Sp
+0 is the fastest compression with the lowest memory usage and the lowest
+compression.
+.Sp
+9 is the slowest compession with the highest memory usage but with the best
+compression.
+.Sp
+This option is only valid if the \f(CW\*(C`Method\*(C'\fR is \s-1ZIP_CM_LZMA\s0. It is ignored
+otherwise.
+.Sp
+Defaults to \f(CW\*(C`LZMA_PRESET_DEFAULT\*(C'\fR (6).
+.ie n .IP """Extreme => 0|1""" 5
+.el .IP "\f(CWExtreme => 0|1\fR" 5
+.IX Item "Extreme => 0|1"
+Makes \s-1LZMA\s0 compression a lot slower, but a small compression gain.
+.Sp
+This option is only valid if the \f(CW\*(C`Method\*(C'\fR is \s-1ZIP_CM_LZMA\s0. It is ignored
+otherwise.
+.Sp
+Defaults to 0.
 .IP "\-Level" 5
 .IX Item "-Level"
 Defines the compression level used by zlib. The value should either be
@@ -943,7 +1061,7 @@ If the \f(CW$z\fR object is associated with a file or a filehandle, \f(CW\*(C`fi
 will return the underlying file descriptor. Once the \f(CW\*(C`close\*(C'\fR method is
 called \f(CW\*(C`fileno\*(C'\fR will return \f(CW\*(C`undef\*(C'\fR.
 .PP
-If the \f(CW$z\fR object is is associated with a buffer, this method will return
+If the \f(CW$z\fR object is associated with a buffer, this method will return
 \&\f(CW\*(C`undef\*(C'\fR.
 .SS "close"
 .IX Subsection "close"
@@ -1068,7 +1186,7 @@ See IO::Compress::FAQ
 .IX Header "SEE ALSO"
 Compress::Zlib, IO::Compress::Gzip, IO::Uncompress::Gunzip, IO::Compress::Deflate, IO::Uncompress::Inflate, IO::Compress::RawDeflate, IO::Uncompress::RawInflate, IO::Compress::Bzip2, IO::Uncompress::Bunzip2, IO::Compress::Lzma, IO::Uncompress::UnLzma, IO::Compress::Xz, IO::Uncompress::UnXz, IO::Compress::Lzop, IO::Uncompress::UnLzop, IO::Compress::Lzf, IO::Uncompress::UnLzf, IO::Uncompress::AnyInflate, IO::Uncompress::AnyUncompress
 .PP
-Compress::Zlib::FAQ
+IO::Compress::FAQ
 .PP
 File::GlobMapper, Archive::Zip,
 Archive::Tar,

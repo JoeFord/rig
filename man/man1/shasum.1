@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "SHASUM 1"
-.TH SHASUM 1 "2011-12-23" "perl v5.14.2" "Perl Programmers Reference Guide"
+.TH SHASUM 1 "2011-12-14" "perl v5.14.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -141,8 +141,12 @@ shasum \- Print or Check SHA Checksums
 \&   \-a, \-\-algorithm   1 (default), 224, 256, 384, 512, 512224, 512256
 \&   \-b, \-\-binary      read in binary mode
 \&   \-c, \-\-check       read SHA sums from the FILEs and check them
-\&   \-p, \-\-portable    read files in portable mode
+\&   \-p, \-\-portable    read in portable mode
 \&                         produces same digest on Windows/Unix/Mac
+\&   \-0, \-\-01          read in BITS mode
+\&                         ASCII \*(Aq0\*(Aq interpreted as 0\-bit,
+\&                         ASCII \*(Aq1\*(Aq interpreted as 1\-bit,
+\&                         all other characters ignored
 \&   \-t, \-\-text        read in text mode (default)
 \&
 \& The following two options are useful only when verifying checksums:
@@ -160,7 +164,7 @@ shasum \- Print or Check SHA Checksums
 \& The sums are computed as described in FIPS\-180\-4.  When checking, the
 \& input should be a former output of this program.  The default mode is to
 \& print a line with checksum, a character indicating type (\`*\*(Aq for binary,
-\& \` \*(Aq for text, \`?\*(Aq for portable), and name for each FILE.
+\& \` \*(Aq for text, \`?\*(Aq for portable, \`^\*(Aq for BITS), and name for each FILE.
 \&
 \& Report shasum bugs to mshelor@cpan.org
 .Ve
@@ -170,8 +174,8 @@ Running \fIshasum\fR is often the quickest way to compute \s-1SHA\s0 message
 digests.  The user simply feeds data to the script through files or
 standard input, and then collects the results from standard output.
 .PP
-The following command shows how easy it is to compute digests for typical
-inputs such as the \s-1NIST\s0 test vector \*(L"abc\*(R":
+The following command shows how to compute digests for typical inputs
+such as the \s-1NIST\s0 test vector \*(L"abc\*(R":
 .PP
 .Vb 1
 \&        perl \-e "print qq(abc)" | shasum

@@ -7,17 +7,17 @@ use Carp ;
 use IO::Handle ;
 use Scalar::Util qw(dualvar);
 
-use IO::Compress::Base::Common 2.033 ;
-use Compress::Raw::Zlib 2.033 ;
-use IO::Compress::Gzip 2.033 ;
-use IO::Uncompress::Gunzip 2.033 ;
+use IO::Compress::Base::Common 2.045 ;
+use Compress::Raw::Zlib 2.045 ;
+use IO::Compress::Gzip 2.045 ;
+use IO::Uncompress::Gunzip 2.045 ;
 
 use strict ;
 use warnings ;
 use bytes ;
 our ($VERSION, $XS_VERSION, @ISA, @EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-$VERSION = '2.033';
+$VERSION = '2.045';
 $XS_VERSION = $VERSION; 
 $VERSION = eval $VERSION;
 
@@ -87,15 +87,16 @@ sub _set_gzerr_undef
     _set_gzerr(@_);
     return undef;
 }
+
 sub _save_gzerr
 {
     my $gz = shift ;
     my $test_eof = shift ;
 
     my $value = $gz->errorNo() || 0 ;
+    my $eof = $gz->eof() ;
 
     if ($test_eof) {
-        #my $gz = $self->[0] ;
         # gzread uses Z_STREAM_END to denote a successful end
         $value = Z_STREAM_END() if $gz->eof() && $value == 0 ;
     }
@@ -162,13 +163,14 @@ sub Compress::Zlib::gzFile::gzread
 
     my $len = defined $_[1] ? $_[1] : 4096 ; 
 
+    my $gz = $self->[0] ;
     if ($self->gzeof() || $len == 0) {
         # Zap the output buffer to match ver 1 behaviour.
         $_[0] = "" ;
+        _save_gzerr($gz, 1);
         return 0 ;
     }
 
-    my $gz = $self->[0] ;
     my $status = $gz->read($_[0], $len) ; 
     _save_gzerr($gz, 1);
     return $status ;
@@ -451,7 +453,7 @@ sub inflate
 
 package Compress::Zlib ;
 
-use IO::Compress::Gzip::Constants 2.033 ;
+use IO::Compress::Gzip::Constants 2.045 ;
 
 sub memGzip($)
 {
@@ -698,7 +700,7 @@ enhancements/changes have been made to the C<gzopen> interface:
 
 =item 1
 
-If you want to to open either STDIN or STDOUT with C<gzopen>, you can now
+If you want to open either STDIN or STDOUT with C<gzopen>, you can now
 optionally use the special filename "C<->" as a synonym for C<\*STDIN> and
 C<\*STDOUT>.
 
@@ -1447,7 +1449,7 @@ of I<Compress::Zlib>.
 
 L<IO::Compress::Gzip>, L<IO::Uncompress::Gunzip>, L<IO::Compress::Deflate>, L<IO::Uncompress::Inflate>, L<IO::Compress::RawDeflate>, L<IO::Uncompress::RawInflate>, L<IO::Compress::Bzip2>, L<IO::Uncompress::Bunzip2>, L<IO::Compress::Lzma>, L<IO::Uncompress::UnLzma>, L<IO::Compress::Xz>, L<IO::Uncompress::UnXz>, L<IO::Compress::Lzop>, L<IO::Uncompress::UnLzop>, L<IO::Compress::Lzf>, L<IO::Uncompress::UnLzf>, L<IO::Uncompress::AnyInflate>, L<IO::Uncompress::AnyUncompress>
 
-L<Compress::Zlib::FAQ|Compress::Zlib::FAQ>
+L<IO::Compress::FAQ|IO::Compress::FAQ>
 
 L<File::GlobMapper|File::GlobMapper>, L<Archive::Zip|Archive::Zip>,
 L<Archive::Tar|Archive::Tar>,

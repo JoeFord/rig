@@ -1,0 +1,11 @@
+/rig/bin/ptar
+/rig/bin/ptardiff
+/rig/bin/ptargrep
+/rig/lib/perl5/5.14.2/Archive/Tar.pm
+/rig/lib/perl5/5.14.2/Archive/Tar/Constant.pm
+/rig/lib/perl5/5.14.2/Archive/Tar/File.pm
+/rig/man/man1/ptar.1
+/rig/man/man1/ptardiff.1
+/rig/man/man1/ptargrep.1
+/rig/man/man3/Archive::Tar.3
+/rig/man/man3/Archive::Tar::File.3
